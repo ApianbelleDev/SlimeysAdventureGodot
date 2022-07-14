@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+#global variables
 export (int) var speed = 300
 export (int) var jump_speed = -700
 export (int) var gravity = 1200
@@ -9,6 +10,7 @@ var jumping = false;
 
 onready var screen_size = get_viewport_rect().size
 
+#gets the input of the player and creates movement
 func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("walk_right"):
@@ -19,6 +21,7 @@ func get_input():
 		get_tree().quit()
 	screenWrap()
 
+#physics implementation
 func _physics_process(delta):
 	get_input()
 	if Input.is_action_just_pressed('jump') and is_on_floor():
@@ -37,6 +40,7 @@ func _physics_process(delta):
 		jumping = false
 
 
+#teleports the player to the ohter side of the screen based on the visual border of the screen.
 func screenWrap():
 	position.x = wrapf(position.x, 0, screen_size.x)
 	position.y = wrapf(position.y, 0, screen_size.y)

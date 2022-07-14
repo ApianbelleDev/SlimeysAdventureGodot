@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://grass.png" type="Texture" id=2]
+[ext_resource path="res://src/levelEnd.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 30.25, 32, 1.25, 32, 1.25, 1.25, 30.25, 1.25 )
@@ -39,6 +40,9 @@ points = PoolVector2Array( 30.25, 32, 1.25, 32, 1.25, 1.25, 30.25, 1.25 )
 0/z_index = 0
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 874, 536 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -23, 91 )
