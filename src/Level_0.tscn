@@ -43,6 +43,7 @@ points = PoolVector2Array( 30.25, 32, 1.25, 32, 1.25, 1.25, 30.25, 1.25 )
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 874, 536 )
+levelName = "src/level_1.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -23, 91 )
